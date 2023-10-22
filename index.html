@@ -14,10 +14,10 @@
    <!------------------------STYLE----------------------------->
    <style>
       #logo{
-         display: block;
          width: 300px;
          height: auto;
       }
+
       hr{
          margin-top: 4px;
          margin-bottom: 25px;
@@ -26,20 +26,25 @@
       .row {
          text-align: center;
       }
-
-     
-
    </style>
 </head>
 <body>
    <script src="index.js"></script>
    <!-------------------HEADER------------------>
-   <div class="navbar p-0 ">
+   <div class="navbar p-3 ">
       <div class="container">
          <a class="navbar-brand" href="#">
             <img id="logo" src="C:\Users\Lenovo\Desktop\Library\Library-site\img\LOGO.jpg" alt="LOGO.img">
          </a>
-         <button type="button" class="btn-lg ">Newsletter</button>
+         <div class="d-flex">
+            <div class="input-group">
+               <input class="form-control rounded me-1" type="text" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2">
+               <div class="input-group-append">
+                  <button class="btn btn-outline-secondary me-4" type="button">Search</button>
+               </div>
+            </div>
+            <button type="button" class="btn btn-outline-dark">Newsletter</button>
+         </div>
       </div>
    </div>
    <!------------------ NAVBAR ------------------>
@@ -48,15 +53,15 @@
       <div class="container">
             <ul class="navbar-nav p-2 ">
                <li class="nav-item dropdown ">
-                  <a class="nav-link drop down-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">For readers</a>
+                  <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">For readers</a>
                   <ul class="dropdown-menu">
                      <li><a class="dropdown-item" href="#">Link</a></li>
                      <li><a class="dropdown-item" href="#">Another link</a></li>
                      <li><a class="dropdown-item" href="#">A third link</a></li>
                   </ul>
                </li>
-               <li class="nav-item dropdown ">
-                  <a class="nav-link dropdown-toggle text-white mx-5" href="#" role="button" data-bs-toggle="dropdown">For
+               <li class="nav-item dropdown mx-5">
+                  <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">For
                      publishers</a>
                   <ul class="dropdown-menu">
                      <li><a class="dropdown-item" href="#">Link</a></li>
@@ -65,7 +70,7 @@
                   </ul>
                </li>
                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">For sponcors</a>
+                  <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">For sponsors</a>
                   <ul class="dropdown-menu">
                      <li><a class="dropdown-item" href="#">Link</a></li>
                      <li><a class="dropdown-item" href="#">Another link</a></li>
