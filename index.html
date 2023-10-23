@@ -11,14 +11,24 @@
       integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
       integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <!-- HTML -->
-      <link rel="stylesheet" href="style.css">
+   <!------------------------STYLE----------------------------->
+   <style>
+      #logo{
+         width: 300px;
+         height: auto;
+      }
 
+      hr{
+         margin-top: 4px;
+         margin-bottom: 25px;
+      }
 
+      .row {
+         text-align: center;
+      }
+   </style>
 </head>
 <body>
-   <script src="index.js"></script>
    <!-------------------HEADER------------------>
    <div class="navbar p-3 ">
       <div class="container">
@@ -32,15 +42,110 @@
                   <button class="btn btn-outline-secondary me-4" type="button">Search</button>
                </div>
             </div>
-            <button type="button" class="btn btn-outline-dark">Newsletter</button>
+            <button type="button" class="btn btn-outline-dark" id="newsletter-button">Newsletter</button>
+            <!--NEWSLETTER-->
+            <div class="modal fade" id="subscribe-modal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+               <div class="modal-dialog">
+                   <div class="modal-content">
+                       <div class="modal-header">
+                           <h5 class="modal-title" id="signInModalLabel">Subscribe</h5>
+                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                               <span aria-hidden="true">&times;</span>
+                           </button>
+                       </div>
+                       <div class="modal-body">
+                           <form>
+                              <div class="form-group">
+                                 <label for="email">Email Address</label>
+                                 <input type="text" class="form-control" id="email" placeholder="Enter your email">
+                              </div>
+                              <div class="form-group">
+                                 <label for="first-name">First Name</label>
+                                 <input type="text" class="form-control" id="first-name" placeholder="Enter your first name">
+                               </div>
+                               <div class="form-group">
+                                 <label for="last-name">Last Name</label>
+                                 <input type="text" class="form-control" id="last-name" placeholder="Enter your last name">
+                              </div>
+                              <div class="form-group">
+                                 <label for="affiliation">Affiliation</label>
+                                 <input type="text" class="form-control" id="affiliation" placeholder="Enter your affiliation">
+                              </div>
+
+
+                              <label for="role">Role</label>
+                              <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                 <label class="form-check-label" for="flexCheckDefault">
+                                   Researcher
+                                 </label>
+                               </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                 <label class="form-check-label" for="flexCheckChecked">
+                                   Librarian
+                                 </label>
+                               </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                 <label class="form-check-label" for="flexCheckChecked">
+                                   Research Support
+                                 </label>
+                               </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                 <label class="form-check-label" for="flexCheckChecked">
+                                   Publisher
+                                 </label>
+                               </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                 <label class="form-check-label" for="flexCheckChecked">
+                                   Funder
+                                 </label>
+                               </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                 <label class="form-check-label" for="flexCheckChecked">
+                                   Service Provider
+                                 </label>
+                               </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                 <label class="form-check-label" for="flexCheckChecked">
+                                   Other
+                                 </label>
+                               </div>
+
+                               <label for="preferred-format">Preferred Format</label>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                 <label class="form-check-label" for="flexRadioDefault1">
+                                   HTML
+                                 </label>
+                               </div>
+                               <div class="form-check">
+                                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                 <label class="form-check-label" for="flexRadioDefault2">
+                                   Plain-text
+                                 </label>
+                               </div>
+                           </form>
+                       </div>
+                       <div class="modal-footer">
+                           <button type="button" class="btn btn-primary" id="subscribe-button">Subscribe</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
          </div>
       </div>
    </div>
    <!------------------ NAVBAR ------------------>
 
+
    <div class="navbar navbar-expand-lg text-white bg-dark p-0" >
       <div class="container">
-
             <ul class="navbar-nav p-2 ">
                <li class="nav-item dropdown ">
                   <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">For readers</a>
@@ -101,8 +206,66 @@
    <br>
 
 
-   <!-- BOOKS -->
+   <!-- CAROUSEL -->
+<div class="container ">
+    <div class="wrapper ">
+      <a href="#" id="prev"  class="previous_round">&#8249;</a>
 
+      <ul class="carousel">
+         <li class="card " style="width: 11rem;">
+            <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\abayjolu.jpeg" alt="">
+            <div class="card-body">
+               <h5 class="card-title text-center">Abay Joly</h5>
+            </div>
+         </li>
+         <li class="card " style="width: 11rem;">
+            <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\abayjolu.jpeg" alt="">
+            <div class="card-body">
+               <h5 class="card-title text-center">Abay Joly</h5>
+            </div>
+         </li>
+         <li class="card " style="width: 11rem;">
+            <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\abayjolu.jpeg" alt="">
+            <div class="card-body">
+               <h5 class="card-title text-center">Abay Joly</h5>
+            </div>
+         </li>
+         <li class="card " style="width: 11rem;">
+            <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\abayjolu.jpeg" alt="">
+            <div class="card-body">
+               <h5 class="card-title text-center">Abay Joly</h5>
+            </div>
+         </li>
+         <li class="card " style="width: 11rem;">
+            <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\abayjolu.jpeg" alt="">
+            <div class="card-body">
+               <h5 class="card-title text-center">Abay Joly</h5>
+            </div>
+         </li>
+         <li class="card " style="width: 11rem;">
+            <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\abayjolu.jpeg" alt="">
+            <div class="card-body">
+               <h5 class="card-title text-center">Abay Joly</h5>
+            </div>
+         </li>
+         <li class="card " style="width: 11rem;">
+            <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\abayjolu.jpeg" alt="">
+            <div class="card-body">
+               <h5 class="card-title text-center">Abay Joly</h5>
+            </div>
+         </li>
+         <li class="card " style="width: 11rem;">
+            <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\abayjolu.jpeg" alt="">
+            <div class="card-body">
+               <h5 class="card-title text-center">Abay Joly</h5>
+            </div>
+         </li>
+      </ul>
+      <a href="#" id="nextButton" class="next round">&#8250;</a>
+   </div>
+</div>
+
+   <!-- BOOKS -->
    <div class="container ">
       <p style="margin-bottom: 0;">New additions</p>
       <hr>
@@ -159,50 +322,6 @@
       </div>
    </div>
 
-
-   <!-- QUOTE -->
-<div class="container bg-secondary p-5 my-3">
-   <h1>NOSB </h1>
-   <p>In 2023 data analytics says that 48% of the children can not get acces to any books resource cause of the highest price crisis in the world</p>
-</div>
-
-
-<!-- BLOG POSTS -->
-   <div class="container">
-<p class="my-0 text-center">Blog posts</p>
-<hr>
-<div id="carouselExampleControlsNoTouching" class="carousel slide mx-auto" data-bs-touch="false" data-bs-interval="false">
-   <div class="carousel-inner ">
-      <div class="carousel-item active ">
-         <div class="row">
-            <div class="col-7">
-         <img  src="C:\Users\Lenovo\Desktop\Library\Library-site\mainPage-img\alash.png" class="
-          d-block w-50 " alt="...">
-         </div>
-         <div class="col-5">
-         <p>ksdnlsdvksdklnffffffffffffffffffffffffffffffffffffeopfsmldfklewfmklewwwwwwwwwwwwwwmlewmflewfmlewmffgn</p>
-         </div>
-         </div>
-      </div>
-      <div class="carousel-item">
-         <img src="C:\Users\Lenovo\Desktop\Library\Library-site\mainPage-img\identityAbay.png" class="d-block " alt="...">
-      </div>
-      <div class="carousel-item">
-         <img src="C:\Users\Lenovo\Desktop\Library\Library-site\mainPage-img\qyz.png" class="d-block w-50" alt="...">
-      </div>
-   </div>
-   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching"
-      data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-   </button>
-   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching"
-      data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-   </button>
-</div>
-</div>
 
 </body>
 </html>
