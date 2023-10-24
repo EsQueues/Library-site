@@ -12,19 +12,10 @@ hr {
    text-align: center;
 }
 
+#blogPostImg{
+   
+}
 
-.wrapper{
-   position: relative;
-}
-.wrapper .carousel {
-   display: grid;
-   grid-auto-flow: column;
-   overflow: auto;
-   gap: 42px;
-}
-.carousel .card{
-   list-style: none;
-}
 
 #prev{
    height: 50px;
