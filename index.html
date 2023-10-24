@@ -37,12 +37,14 @@
          </a>
          <div class="d-flex">
             <div class="input-group">
-               <input class="form-control rounded me-1" type="text" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2">
+               <input class="form-control rounded me-1" type="text" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2" id="search-input">
                <div class="input-group-append">
                   <button class="btn btn-outline-secondary me-4" type="button">Search</button>
                </div>
             </div>
-            <button type="button" class="btn btn-outline-dark" id="newsletter-button">Newsletter</button>
+
+            <button type="button" class="btn btn-outline-dark me-2" id="newsletter-button">Newsletter</button>
+         
             <!--NEWSLETTER-->
             <div class="modal fade" id="subscribe-modal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel" aria-hidden="true">
                <div class="modal-dialog">
@@ -130,6 +132,7 @@
                                    Plain-text
                                  </label>
                                </div>
+                               <div id="warning-message" class="text-danger"></div>
                            </form>
                        </div>
                        <div class="modal-footer">
@@ -147,6 +150,13 @@
    <div class="navbar navbar-expand-lg text-white bg-dark p-0" >
       <div class="container">
             <ul class="navbar-nav p-2 ">
+               <li class="nav-item dropdown me-5">
+                  <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">For librarians</a>
+                  <ul class="dropdown-menu">
+                     <li><a class="dropdown-item" id="sign-in" href="#">Sign In</a></li>
+                     <li><a class="dropdown-item" id="sign-up" href="#">Sign Up</a></li>
+                  </ul>
+               </li>
                <li class="nav-item dropdown ">
                   <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">For readers</a>
                   <ul class="dropdown-menu">
@@ -204,9 +214,6 @@
    </section>
    <br>
    <br>
-
-
-
    <!-- BOOKS -->
    <div class="container ">
       <p style="margin-bottom: 0;">New additions</p>
@@ -264,6 +271,6 @@
       </div>
    </div>
 
-
+   <script src="index.js"></script>
 </body>
 </html>
