@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
-<!------------------BOOTSTRAP ADDING------------------------->
+   <title>NOSB</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+   <!------------------BOOTSTRAP ADDING------------------------->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-   integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
-      integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+      integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+      crossorigin="anonymous"></script>
+      <link rel="icon" type="image/png" sizes="32x32"
+         href="C:\Users\Lenovo\Desktop\Assignment2Web\mainPage-img\favicon-32x32.png">
    <!------------------------STYLE----------------------------->
    <style>
-      #logo{
+      #logo {
          width: 300px;
          height: auto;
       }
 
-      hr{
+      hr {
          margin-top: 4px;
          margin-bottom: 25px;
       }
@@ -26,8 +32,21 @@
       .row {
          text-align: center;
       }
+
+      footer    {
+         text-align: start;
+         background-color: black;
+         color: aliceblue;
+         margin-top: 50px;
+         padding: 25px;
+      }
+
+      a {
+         text-decoration: none;
+      }
    </style>
 </head>
+
 <body>
    <!-------------------HEADER------------------>
    <div class="navbar p-3 ">
@@ -36,152 +55,166 @@
             <img id="logo" src="C:\Users\Lenovo\Desktop\Library\Library-site\img\LOGO.jpg" alt="LOGO.img">
          </a>
          <div class="d-flex">
-            <div class="input-group">
-               <input class="form-control rounded me-1" type="text" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2">
-               <div class="input-group-append">
-                  <button class="btn btn-outline-secondary me-4" type="button">Search</button>
+
+
+            <button type="button" class="btn btn-outline-dark me-2" id="newsletter-button">Newsletter</button>
+
+            <!--NEWSLETTER-->
+            <div class="modal fade" id="subscribe-modal" tabindex="-1" role="dialog"
+               aria-labelledby="subscribeModalLabel" aria-hidden="true">
+               <div class="modal-dialog">
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <h5 class="modal-title" id="signInModalLabel">Subscribe</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                           <span aria-hidden="true">&times;</span>
+                        </button>
+                     </div>
+                     <div class="modal-body">
+                        <form>
+                           <div class="form-group">
+                              <label for="email">Email Address</label>
+                              <input type="text" class="form-control" id="email" placeholder="Enter your email">
+                           </div>
+                           <div class="form-group">
+                              <label for="first-name">First Name</label>
+                              <input type="text" class="form-control" id="first-name"
+                                 placeholder="Enter your first name">
+                           </div>
+                           <div class="form-group">
+                              <label for="last-name">Last Name</label>
+                              <input type="text" class="form-control" id="last-name" placeholder="Enter your last name">
+                           </div>
+                           <div class="form-group">
+                              <label for="affiliation">Affiliation</label>
+                              <input type="text" class="form-control" id="affiliation"
+                                 placeholder="Enter your affiliation">
+                           </div>
+
+
+                           <label for="role">Role</label>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                              <label class="form-check-label" for="flexCheckDefault">
+                                 Researcher
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                              <label class="form-check-label" for="flexCheckChecked">
+                                 Librarian
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                              <label class="form-check-label" for="flexCheckChecked">
+                                 Research Support
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                              <label class="form-check-label" for="flexCheckChecked">
+                                 Publisher
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                              <label class="form-check-label" for="flexCheckChecked">
+                                 Funder
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                              <label class="form-check-label" for="flexCheckChecked">
+                                 Service Provider
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                              <label class="form-check-label" for="flexCheckChecked">
+                                 Other
+                              </label>
+                           </div>
+
+                           <label for="preferred-format">Preferred Format</label>
+                           <div class="form-check">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                 id="flexRadioDefault1">
+                              <label class="form-check-label" for="flexRadioDefault1">
+                                 HTML
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                 id="flexRadioDefault2">
+                              <label class="form-check-label" for="flexRadioDefault2">
+                                 Plain-text
+                              </label>
+                           </div>
+                           <div id="warning-message" class="text-danger"></div>
+                        </form>
+                     </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="subscribe-button">Subscribe</button>
+                     </div>
+                  </div>
                </div>
             </div>
-            <button type="button" class="btn btn-outline-dark" id="newsletter-button">Newsletter</button>
-            <!--NEWSLETTER-->
-            <div class="modal fade" id="subscribe-modal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel" aria-hidden="true">
-               <div class="modal-dialog">
-                   <div class="modal-content">
-                       <div class="modal-header">
-                           <h5 class="modal-title" id="signInModalLabel">Subscribe</h5>
-                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                               <span aria-hidden="true">&times;</span>
-                           </button>
-                       </div>
-                       <div class="modal-body">
-                           <form>
-                              <div class="form-group">
-                                 <label for="email">Email Address</label>
-                                 <input type="text" class="form-control" id="email" placeholder="Enter your email">
-                              </div>
-                              <div class="form-group">
-                                 <label for="first-name">First Name</label>
-                                 <input type="text" class="form-control" id="first-name" placeholder="Enter your first name">
-                               </div>
-                               <div class="form-group">
-                                 <label for="last-name">Last Name</label>
-                                 <input type="text" class="form-control" id="last-name" placeholder="Enter your last name">
-                              </div>
-                              <div class="form-group">
-                                 <label for="affiliation">Affiliation</label>
-                                 <input type="text" class="form-control" id="affiliation" placeholder="Enter your affiliation">
-                              </div>
-
-
-                              <label for="role">Role</label>
-                              <div class="form-check">
-                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                 <label class="form-check-label" for="flexCheckDefault">
-                                   Researcher
-                                 </label>
-                               </div>
-                               <div class="form-check">
-                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                                 <label class="form-check-label" for="flexCheckChecked">
-                                   Librarian
-                                 </label>
-                               </div>
-                               <div class="form-check">
-                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                                 <label class="form-check-label" for="flexCheckChecked">
-                                   Research Support
-                                 </label>
-                               </div>
-                               <div class="form-check">
-                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                                 <label class="form-check-label" for="flexCheckChecked">
-                                   Publisher
-                                 </label>
-                               </div>
-                               <div class="form-check">
-                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                                 <label class="form-check-label" for="flexCheckChecked">
-                                   Funder
-                                 </label>
-                               </div>
-                               <div class="form-check">
-                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                                 <label class="form-check-label" for="flexCheckChecked">
-                                   Service Provider
-                                 </label>
-                               </div>
-                               <div class="form-check">
-                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                                 <label class="form-check-label" for="flexCheckChecked">
-                                   Other
-                                 </label>
-                               </div>
-
-                               <label for="preferred-format">Preferred Format</label>
-                               <div class="form-check">
-                                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                 <label class="form-check-label" for="flexRadioDefault1">
-                                   HTML
-                                 </label>
-                               </div>
-                               <div class="form-check">
-                                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                                 <label class="form-check-label" for="flexRadioDefault2">
-                                   Plain-text
-                                 </label>
-                               </div>
-                           </form>
-                       </div>
-                       <div class="modal-footer">
-                           <button type="button" class="btn btn-primary" id="subscribe-button">Subscribe</button>
-                       </div>
-                   </div>
-               </div>
-           </div>
          </div>
       </div>
    </div>
    <!------------------ NAVBAR ------------------>
 
 
-   <div class="navbar navbar-expand-lg text-white bg-dark p-0" >
+   <div class="navbar navbar-expand-lg text-white bg-dark p-0">
       <div class="container">
-            <ul class="navbar-nav p-2 ">
-               <li class="nav-item dropdown ">
-                  <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">For readers</a>
-                  <ul class="dropdown-menu">
-                     <li><a class="dropdown-item" href="#">Link</a></li>
-                     <li><a class="dropdown-item" href="#">Another link</a></li>
-                     <li><a class="dropdown-item" href="#">A third link</a></li>
-                  </ul>
-               </li>
-               <li class="nav-item dropdown mx-5">
-                  <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">For
-                     publishers</a>
-                  <ul class="dropdown-menu">
-                     <li><a class="dropdown-item" href="#">Link</a></li>
-                     <li><a class="dropdown-item" href="#">Another link</a></li>
-                     <li><a class="dropdown-item" href="#">A third link</a></li>
-                  </ul>
-               </li>
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">For sponsors</a>
-                  <ul class="dropdown-menu">
-                     <li><a class="dropdown-item" href="#">Link</a></li>
-                     <li><a class="dropdown-item" href="#">Another link</a></li>
-                     <li><a class="dropdown-item" href="#">A third link</a></li>
-                  </ul>
-               </li>
+         <ul class="navbar-nav p-2 ">
+            <li class="nav-item dropdown me-5">
+               <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">For
+                  librarians</a>
+               <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" id="sign-in" href="#">Sign In</a></li>
+                  <li><a class="dropdown-item" id="sign-up" href="#">Sign Up</a></li>
                </ul>
+            </li>
+            <li class="nav-item dropdown ">
+               <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">For
+                  readers</a>
+               <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">All books</a></li>
+                  <li><a class="dropdown-item" href="#">Release</a></li>
+                  <li><a class="dropdown-item" href="#">Archive</a></li>
+               </ul>
+            </li>
+            <li class="nav-item dropdown mx-5">
+               <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">For
+                  publishers</a>
+               <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Publish</a></li>
+                  <li><a class="dropdown-item" href="#">Be publisher form</a></li>
+                  <li><a class="dropdown-item" href="#">Foundation</a></li>
+               </ul>
+            </li>
+            <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">For
+                  sponsors</a>
+               <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Information</a></li>
+                  <li><a class="dropdown-item" href="#">Bank</a></li>
+                  <li><a class="dropdown-item" href="#">Form to be sponsor</a></li>
+               </ul>
+            </li>
+         </ul>
          <ul class="navbar-nav ms-auto">
-               <li class="nav-item dropdown ms-auto">
-                  <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">NOSP</a>
-                  <ul class="dropdown-menu">
-                     <li><a class="dropdown-item" href="#">Link</a></li>
-                     <li><a class="dropdown-item" href="#">Another link</a></li>
-                     <li><a class="dropdown-item" href="#">A third link</a></li>
-                  </ul>
-               </li>
+            <li class="nav-item dropdown ms-auto">
+               <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">NOSB</a>
+               <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#about">About us</a></li>
+                  <li><a class="dropdown-item" href="#contact">Contact</a></li>
+                  <li><a class="dropdown-item" href="#news">News</a></li>
+
+               </ul>
+            </li>
          </ul>
 
       </div>
@@ -196,74 +229,190 @@
    <section class="bg-info">
       <div class="container p-5">
          <div class="row">
-            <strong style="font-size: 25px;">"Free education and health care are essential for the welfare of the population."</strong>
-            <p >Jose Ramos Horta</p>
+            <strong style="font-size: 25px;">"Free education and health care are essential for the welfare of the
+               population."</strong>
+            <p>Jose Ramos Horta</p>
          </div>
       </div>
-   </div>
+      </div>
    </section>
    <br>
    <br>
-
-
-
    <!-- BOOKS -->
    <div class="container ">
       <p style="margin-bottom: 0;">New additions</p>
       <hr>
       <div class="row  justify-content-center">
          <div class="col-2">
-          <div class="card " style="width: 11rem;">
-            <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\abayjolu.jpeg" alt="">
-            <div class="card-body">
-               <h5 class="card-title text-center">Abay Joly</h5>
+            <div class="card " style="width: 11rem;">
+               <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\abayjolu.jpeg" alt="">
+               <div class="card-body">
+                  <h5 class="card-title text-center">Abay Joly</h5>
+               </div>
             </div>
-         </div>
          </div>
          <div class="col-2">
-         <div class="card" style="width: 11rem;">
-            <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\maha.jpeg" alt="">
-            <div class="card-body">
-               <h5 class="card-title text-center">Mahambetin jebesi</h5>
+            <div class="card" style="width: 11rem;">
+               <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\maha.jpeg" alt="">
+               <div class="card-body">
+                  <h5 class="card-title text-center">Mahambetin jebesi</h5>
+               </div>
             </div>
-         </div>
          </div>
          <div class="col-2">
-         <div class="card" style="width: 11rem;">
-            <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\elimai.jpg" alt="">
-            <div class="card-body">
-               <h5 class="card-title text-center">Elim-ai</h5>
+            <div class="card" style="width: 11rem;">
+               <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\elimai.jpg" alt="">
+               <div class="card-body">
+                  <h5 class="card-title text-center">Elim-ai</h5>
+               </div>
             </div>
-         </div>
          </div>
          <div class="col-2">
-         <div class="card" style="width: 11rem;">
-            <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\kitap1alash.jpg" alt="">
-            <div class="card-body">
-               <h5 class="card-title text-center">Alash kozgalisy</h5>
+            <div class="card" style="width: 11rem;">
+               <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\kitap1alash.jpg" alt="">
+               <div class="card-body">
+                  <h5 class="card-title text-center">Alash kozgalisy</h5>
+               </div>
             </div>
-         </div>
          </div>
          <div class="col-2">
-         <div class="card" style="width: 11rem;">
-            <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\jamal.jpeg" alt="">
-            <div class="card-body">
-               <h5 class="card-title text-center">Baqytsiz Jamal</h5>
+            <div class="card" style="width: 11rem;">
+               <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\jamal.jpeg" alt="">
+               <div class="card-body">
+                  <h5 class="card-title text-center">Baqytsiz Jamal</h5>
+               </div>
             </div>
-         </div>
          </div>
          <div class="col-2">
-         <div class="card" style="width: 11rem;">
-            <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\koshpendiler.jpeg" alt="">
-            <div class="card-body">
-               <h5 class="card-title text-center">Koshpendiler</h5>
+            <div class="card" style="width: 11rem;">
+               <img class="card-img" src="C:\Users\Lenovo\Desktop\Library\Library-site\books\koshpendiler.jpeg" alt="">
+               <div class="card-body">
+                  <h5 class="card-title text-center">Koshpendiler</h5>
+               </div>
             </div>
          </div>
-         </div>
+      </div>
+      <h5 style="display: inline">Time to release new book: </h5>
 
+      <p style="display: inline;" id="demo"></p>
+   </div>
+   <!-- QUOTE -->
+   <div class="container bg-secondary p-4 my-3">
+      <h1>NOSB </h1>
+      <p>According to UNESCO, approximately 17% of the world's adult population (approximately 773 million people)
+         cannot
+         read or
+         write. Lack of access to affordable educational resources, including books, is a significant contributing
+         factor.
+         Access to books is a critical factor in ensuring educational equality. Many children, especially in underserved
+         communities, lack the resources to purchase books, hindering their educational development. NOSB- organization
+         and
+         individual around the world are working on open access initiatives, such as your open-source library,
+         to provide free or low-cost access to educational materials, including books.</p>
+   </div>
+
+
+
+
+   <!-- CARUSEL BLOG POST -->
+   <div class="container ">
+      <p style="margin-bottom: 0;">Blog posts</p>
+      <hr>
+      <div class="slider text-center">
+         <div class="img-box">
+            <img src="C:\Users\Lenovo\Desktop\Library\Library-site\mainPage-img\alash.png" alt=" " class="slider-img">
+         </div>
+         <button class="btn-outline-dark" onclick="prev()">Prev</button>
+         <button class="btn-outline-dark" onclick="next()">Next</button>
       </div>
    </div>
 
 
+
+
+   <!-- FOOTER -->
+      <footer class="text-center">
+   <div class="container">
+      <div class="row">
+         <section class="col-sm-4 col-12">
+            <h2 id="about">About us</h2>
+            <p>
+               Nomad Archive is a digital library dedicated to preserving and celebrating the rich cultural heritage of the
+               Kazakh
+               people. Our mission is to provide a curated collection of literature, art, and traditions that offer
+               profound insights
+               into the Qazaq identity.
+               <br>
+               We are new library management system site that will add new top every week. And there you can find top
+               forgetten books.
+               Only by new technologies we can develop facter to the future.
+
+
+            </p>
+         </section>
+         <section class="col-sm-4 col-12">
+            <h2 id="contact">Contact us</h2>
+            <p>
+               Phone: +7 777 353 43 53
+               <br>
+               Gmail: info@library.kz
+               <br>
+               Address: Qz, Astana, Qabanbay batyr 62
+            </p>
+         </section>
+         <div class="col-sm-4 col-12 ">
+            <h2 i>Newsletter</h2>
+            <ul class="text-start">
+               <li>In the end of the semestr it will such an mini pet project. You will be able to log in and assign or
+                  release.
+               </li>
+               <li>Books amount will
+                  be about 1000.
+               </li>
+               <li>It will be even mini platform with top articles. There will be add eBook and online buy functions. By
+                  using frameworks Spring and React.
+               </li>
+
+            </ul>
+         </div>
+   </div>
+      </footer>
+
+   <!-- <footer class="row">
+      <div class="container">
+      <div class="col-12 col-md-3">
+         <h5 class="mb-3">NOSB</h5>
+         <p>Terms of Use</p>
+         <p>For Librarians</p>
+         <p>For Publishers</p>
+         <p>For Funders</p>
+         <p>Resources</p>
+         <p>Donate</p>
+      </div>
+      <div class="col-12 col-md-3">
+         <h5 class="mb-3">About Us</h5>
+         <p>Nomad Open Source Books was founded with a passion for spreading the love of literature and knowledge. We
+            believe that access to books and information should be free, open, and available to all. That's why we've
+            committed ourselves to building a library that embraces the principles of open access, encouraging readers
+            and learners from all walks of life to explore, discover, and learn.
+         </p>
+      </div>
+      <div class="col-12 col-md-3">
+         <h5 class="mb-3">License</h5>
+         <p>Nomad Open Source Books is committed to fostering open access and sharing of knowledge. Our content is
+            licensed under the Creative Commons Attribution 4.0 International License <a href="#">(CC BY 4.0).</a></p>
+      </div>
+      <div class="col-12 col-md-3">
+         <h4 class="mb-3">Follow Us On</h4>
+         <div class="d-flex">
+            <a class="nav-link p-0 me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+            <a class="nav-link p-0 mx-3" href="#"><i class="fab fa-twitter"></i></a>
+         </div>
+      </div>
+
+   </footer> -->
+
+   <script src="index.js"></script>
 </body>
+
 </html>
