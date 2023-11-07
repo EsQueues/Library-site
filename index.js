@@ -104,32 +104,9 @@ signUp.addEventListener("click", () => {
    }
 });
 
-// carusel
-var slider_img=document.querySelector('.slider-img');
-var images = ['file:///C:/Users/Lenovo/Desktop/Library/Library-site/mainPage-img/alash.png', 'file:///C:/Users/Lenovo/Desktop/Library/Library-site/mainPage-img/qyz.png', 'file:///C:/Users/Lenovo/Desktop/Library/Library-site/mainPage-img/identityAbay.png','file:///C:/Users/Lenovo/Desktop/Library/Library-site/mainPage-img/photo_2023-10-03_14-24-11.jpg'];
-var i=0;
-function prev(){
-if(i<=0) {
-   i = images.length;
-}
-i--;
-   return setImg();
-
-}
-function next(){
-   if(i>=images.length-1){
-      i = -1;
-   }
-   i++;
-   return setImg();
-}
-
-function setImg(){
-   return slider_img.setAttribute('src',images[i]);
-}
 
 
-var countDownDate = new Date("Oct 25, 2023 15:37:25").getTime();
+var countDownDate = new Date("Nov 8, 2023 15:37:25").getTime();
 
 var x = setInterval(function () {
    var now = new Date().getTime();
@@ -145,3 +122,172 @@ var x = setInterval(function () {
       document.getElementById("demo").innerHTML = "EXPIRED";
    }
 }, 1000);
+
+
+
+
+
+////////////////
+const carousel = document.getElementById('carousel');
+const prevButton = document.getElementById('prevPost');
+const nextButton = document.getElementById('nextPost');
+
+const posts = JSON.parse(localStorage.getItem('posts')) || [];
+
+let currentIndex = 0;
+
+function showPost(index) {
+   if (index >= 0 && index < posts.length) {
+      const post = posts[index];
+      carousel.innerHTML = `
+         <div class="post">
+            <h1>${post.title}</h1>
+            <p>${post.content}</p>
+         </div>
+      `;
+   }
+}
+
+showPost(currentIndex);
+
+prevButton.addEventListener('click', () => {
+   currentIndex = (currentIndex - 1 + posts.length) % posts.length;
+   showPost(currentIndex);
+});
+
+nextButton.addEventListener('click', () => {
+   currentIndex = (currentIndex + 1) % posts.length;
+   showPost(currentIndex);
+});
+
+function updateCarousel() {
+   const carousel = document.getElementById("carousel");
+   carousel.innerHTML = "";
+
+   for (let i = 0; i < posts.length; i++) {
+      const post = document.createElement("div");
+      post.className = "post";
+      post.innerHTML = `<h1>${posts[i].title}</h1><p>${posts[i].content}</p>`;
+      carousel.appendChild(post);
+   }
+}
+
+
+function addPost(title, content) {
+   const newPost = { title, content };
+   const posts = JSON.parse(localStorage.getItem('posts')) || [];
+   posts.push(newPost);
+
+   localStorage.setItem('posts', JSON.stringify(posts));
+
+}
+
+
+function removePost(index) {
+   if (index >= 0 && index < posts.length) {
+      posts.splice(index, 1);
+      localStorage.setItem('posts', JSON.stringify(posts));
+   }
+   console.log(posts)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////sign up
+document.getElementById("signupButton").addEventListener("click", function () {
+   const firstName = document.getElementById("InputFirstName").value;
+   const lastName = document.getElementById("InputLastName").value;
+   const email = document.getElementById("InputEmail").value;
+   const password = document.getElementById("InputPassword").value;
+
+   let isValid = true;
+
+   const emailError = document.getElementById("email-error");
+   const passwordError = document.getElementById("password-error");
+   const nameError = document.getElementById("name-error");
+
+   emailError.textContent = "";
+   passwordError.textContent = "";
+   nameError.textContent = "";
+
+   if (!firstName || !lastName) {
+   isValid = false;
+   nameError.textContent = "First Name and Last Name are required.";
+}
+
+if (!isValidEmail(email)) {
+   isValid = false;
+   emailError.textContent = "Invalid email.";
+}
+
+if (!isValidPassword(password)) {
+   isValid = false;
+   passwordError.textContent = "Invalid password.";
+}
+if(isValid){
+   const firstName = document.getElementById("InputFirstName").value;
+   const lastName = document.getElementById("InputLastName").value;
+   const email = document.getElementById("InputEmail").value;
+   const password = document.getElementById("InputPassword").value;
+   const user = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password,
+   };
+
+   const users = JSON.parse(localStorage.getItem("users")) || [];
+   users.push(user);
+
+   localStorage.setItem("users", JSON.stringify(users));
+
+   localStorage.setItem("loggedInUser", JSON.stringify(user));
+}
+
+
+
+
+  ///SIGN IN
+      document.getElementById("signInButton").addEventListener("click", function () {
+         const signInEmail = document.getElementById("SignInEmail").value;
+         const signInPassword = document.getElementById("SignInPassword").value;
+
+         const users = JSON.parse(localStorage.getItem("users")) || [];
+
+         const foundUser = users.find((user) => user.email === signInEmail && user.password === signInPassword);
+
+         if (foundUser) {
+            localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
+            console.log("Script is running...");
+            alert("Sign-in successful!");
+         } else {
+            alert("Invalid email or password. Please try again.");
+         }
+
+         document.getElementById("SignInEmail").value = "";
+         document.getElementById("SignInPassword").value = "";
+      });
+
+
+
+});
