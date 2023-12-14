@@ -38,7 +38,33 @@
 
 }
 
+ @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
+        /* Apply the animation to the quote */
+        .quote {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Style the background and text */
+        .bg-info {
+            background-color: #5bc0de;
+            color: #141212;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        /* Add some style to the quote text */
+        .quote strong {
+            font-size: 25px;
+        }
+        
       hr {
          margin-top: 4px;
          margin-bottom: 25px;
@@ -274,15 +300,7 @@
                   <li><a class="dropdown-item" href="#">Archive</a></li>
                </ul>
             </li>
-            <li class="nav-item dropdown mx-5">
-               <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">For
-                  publishers</a>
-               <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Publish</a></li>
-                  <li><a class="dropdown-item" href="#">Be publisher form</a></li>
-                  <li><a class="dropdown-item" href="#">Foundation</a></li>
-               </ul>
-            </li>
+
             <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">For
                   sponsors</a>
@@ -314,16 +332,14 @@
    <!------------------ MAIN ------------------------>
 
    <!-- CITATION -->
-   <section class="bg-info">
-      <div class="container p-5">
-         <div class="row">
-            <strong style="font-size: 25px;">"Free education and health care are essential for the welfare of the
-               population."</strong>
-            <p>Jose Ramos Horta</p>
-         </div>
+<section class="bg-info">
+   <div class="container p-5">
+      <div class="row quote">
+         <strong>"A person who does not read a good book has no advantage over a person who cannot read."</strong>
+         <p>Mark Twain</p>
       </div>
-      </div>
-   </section>
+   </div>
+</section>
    <br>
    <br>
    <!-- BOOKS -->
@@ -418,55 +434,6 @@
 
          <div id="carousel">
             <div class="post">
-               <h1>Top 10 books for explore qazaq identity</h1>
-               <p>Yes our world is developing every second, But is it real you if you don't have your identity? Go to this top 10 books if
-         you want to know what the real Qazaq identity is! Qazaq identity is a rich tapestry woven from the nomadic traditions of
-         the Great Steppe, the cultural heritage of the Silk Road. It encompasses the lyrical poetry of all authors, the
-         intricate craftsmanship of traditional Kazakh yurts, and the timeless melodies of the dombra.
-         Qazaq identity is forged through the celebration of Nauryz, the communal gatherings of Zhylu, and the deep respect for
-         elders and ancestors. It's about cherishing the vast landscapes that stretch from the Caspian Sea to the Altai, and
-         understanding the interconnectedness of all living beings.
-         This identity is a source of pride for the Qazaq people, a source of generations to come, and a testament to the
-         enduring power of culture. Explore these top 10 books to delve deeper into the heart of Qazaq identity.</p>
-         </div>
-         <div class="post">
-            <h1> Top 5 books about batyrs in the past</h1>
-         <p>n the rich tapestry of Qazaq history, the Batyrs stand as legendary , the spirit of courage, honor, and indomitable
-         strength. The term "Batyrs" revered warriors who played a pivotal role in safeguarding the land and the cultural
-         heritage of the Qazaq people.
-         These valiant individuals were more than just skilled fighters; they were of chivalry and virtue. Clad in traditional
-         armor and armed with weapons the heart of the Qazaq steppes, Batyrs were known for their unwavering to their communities
-         and the principles they held dear.
-         Batyrs emerged during a time of change, when the Great Steppe bore witness to the ebb and flow of empires. Their
-         resilience and tactical brilliance were instrumental in defending the Qazaq lands from external threats, leaving an mark
-         on the annals of history.
-         Every qazaq man should to read Batyr eposis, books, romans.</p>
-         </div>
-         <div class="post">
-            <h1>Top 12 books for deep knowledge Alash</h1>
-            <p>
-               In the early 20th century, amidst the winds of change sweeping across Asia, emerged a vision that would forever be
-               etched in the annals of history - the Alash Orda. Alash, a beacon of hope and autonomy, was to the indomitable spirit of
-               the Kazakh people.
-               The Alash period was marked by a fervent reconnection with Kazakh. Language, literature, and art flourished, serving as
-               pillars. The words of poets and thinkers echoed through the nomadic expanse, the dreams of a united people.
-               The legacy of Alash lives on in the hearts of Kazakh patriots, the spirit of independence burned brightly. The imagery
-               of the strength and freedom, soared as a symbol of the Alash movement.
-               This 5 books for you if want to know what legacy they took!
-            </p>
-         </div>
-         <div class="post">
-            <h1>Top 7 books for qazaq girls identity</h1>
-            <p>Kazakh girls, also known as Qazaq girls, are the vibrant daughters of the vast steppes and rugged mountains of
-            Kazakhstan. Raised in a land where tradition and modernity interlace, they carry with them a rich cultural heritage
-            passed down through generations.
-            With dark, expressive eyes that mirror the soul of the Eurasian landscapes, Kazakh girls often possess a natural grace
-            and resilience. Their features tell stories of ancient nomadic tribes, connecting them to a history steeped in survival
-            and adaptation.
-            Yet, amidst the forward march into the future, Kazakh girls remain deeply connected to their roots. They celebrate
-            traditional festivals with fervor, where the echoes of dombra music and the lively steps of kuyruk dances fill the air.
-            They are keepers of age-old customs, cherishing the wisdom of their ancestors.
-            This 10 books for you if want to know about life of qazaq woman more.</p>
          </div>
          </div>
          <button type="button" id="prevPost">Previous</button>
